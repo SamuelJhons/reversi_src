@@ -1,0 +1,225 @@
+<data>
+	<progress>
+		<progress_back>
+			<align	 x="50"	y="50"/>
+		</progress_back>
+		<progress_bar >
+			<align	 x="2" 		y="50" 		target="progress_back"/>
+		</progress_bar>
+	</progress>
+	<start_menu>
+		<back_win>
+			<align 		x="50" 		y="50"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</back_win>
+		<title	text_id="title_start_menu">
+			<align 		x="50" 		y="8"		width="50"		height="11"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</title>
+		<btn_pvp		type="btn"		texture="btn_pvp">
+			<align 		x="75" 		y="60"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeOut"			time="500"/>
+		</btn_pvp>
+		<btn_pve>
+			<align 		x="25" 		y="60"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="950"/>
+			<hide 		dir="down"		tran="easeOut"			time="500"/>
+		</btn_pve>
+		<arrow_left>
+			<align 		x="45" 		y="60"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="1000"/>
+			<hide 		dir="down"		tran="easeOut"			time="500"/>
+		</arrow_left>
+		<arrow_right>
+			<align 		x="55" 		y="60"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="1050"/>
+			<hide 		dir="down"		tran="easeOut"			time="500"/>
+		</arrow_right>
+	</start_menu>
+	<start_pvp>
+		<back_win>
+			<align 		x="50" 		y="50"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</back_win>
+		<title		text_id="title_start_pvp">
+			<align 		x="50" 		y="8"		width="50"		height="11"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</title>
+		<txt_select_color	text_id="txt_select_color">
+			<align 		x="50" 		y="35"		width="50"		height="11"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</txt_select_color>
+		<txt_select_diff	text_id="txt_select_diff">
+			<align 		x="50" 		y="67"		width="50"		height="11"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</txt_select_diff>
+		<btn_play>
+			<align 		x="65" 		y="100"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</btn_play>
+		<btn_back>
+			<align 		x="35" 		y="100"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</btn_back>
+		<radio1>
+			<align 		x="35" 		y="49"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</radio1>
+		<radio2>
+			<align 		x="65" 		y="49"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</radio2>
+		<arrow>
+			<align 		x="50" 		y="49"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</arrow>
+		<slider_back>
+			<align 		x="50" 		y="78"		target="back_win"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</slider_back>
+		<slider>
+			<align 		x="50" 		y="50"		target="slider_back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="down"		tran="easeIn"			time="500"/>
+		</slider>
+	</start_pvp>
+	<level>
+		<grid gap="3" pad_left="110" pad_top="14" pref="back_" count="8" align="item_"/>
+	</level>
+	<interface>
+		<btn_pause>
+			<align 		x="95"		y="7"/>
+			<show 		dir="left"		tran="easeOutBack"		time="900"/>
+			<hide 		dir="right"		tran="easeOut"			time="10000"/>
+		</btn_pause>
+		<txt_first>
+			<align 		x="50"		y="50"		target="count1_back"/>
+			<show 		dir="right"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="left"		tran="easeOut"			time="800"/>
+		</txt_first>
+		<txt_second>
+			<align 		x="50"		y="50"		target="count2_back"/>
+			<show 		dir="left"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="right"		tran="easeOut"			time="800"/>
+		</txt_second>
+		<back_first>
+			<align 		x="5"		y="60"/>
+			<show 		dir="right"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="left"		tran="easeOut"			time="800"/>
+		</back_first>
+		<back_second>
+			<align 		x="95"		y="60"/>
+			<show 		dir="left"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="right"		tran="easeOut"			time="800"/>
+		</back_second>
+		<bar_first>
+			<align 		x="50"		y="50"		target="back_first"/>
+			<show 		dir="right"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="left"		tran="easeOut"			time="800"/>
+		</bar_first>
+		<bar_second>
+			<align 		x="50"		y="50" 	target="back_second"/>
+			<show 		dir="left"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="right"		tran="easeOut"			time="800"/>
+		</bar_second>
+		<count1_back>
+			<align 		x="5"		y="90"/>
+			<show 		dir="right"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="left"		tran="easeOut"			time="800"/>
+		</count1_back>
+		<count2_back>
+			<align 		x="95"		y="90"/>
+			<show 		dir="left"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="right"		tran="easeOut"			time="800"/>
+		</count2_back>
+	</interface>
+	<game_over>
+		<back>
+			<align 		x="50"		y="50"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</back>
+		<title		text_id="title_game_over">
+			<align 		x="50"		y="8" 		width="50"		height="11"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</title>
+		<btn_menu>
+			<align 		x="35"		y="99" 	target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_menu>
+		<btn_replay>
+			<align 		x="65"		y="99" 	target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_replay>
+		<txt_main>
+			<align 		x="50"		y="50" 		width="50"		height="30"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</txt_main>
+	</game_over>
+	<pause>
+		<back>
+			<align 		x="50"		y="50"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</back>
+		<title		text_id="title_pause">
+			<align 		x="50" 		y="12"		width="50"		height="11"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</title>
+		<btn_menu>
+			<align 		x="25"		y="100" 		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_menu>
+		<btn_replay>
+			<align 		x="50"		y="100" 		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_replay>
+		<btn_play>
+			<align 		x="75"		y="100" 		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_play>
+	</pause>
+	<warning>
+		<back>
+			<align 		x="50"		y="50"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</back>
+		<btn_accept>
+			<align 		x="35"		y="100"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="800"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_accept>
+		<btn_cancel>
+			<align 		x="65"		y="100"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</btn_cancel>
+		<main_text		text_id="txt_warning">
+			<align 		x="50"		y="50" 		width="50"		height="20"		target="back"/>
+			<show 		dir="down"		tran="easeOutBack"		time="850"/>
+			<hide 		dir="down"		tran="easeOut"			time="800"/>
+		</main_text>
+	</warning>
+</data>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="reversi" default="build" basedir="">
+	<condition property="exe" value=".exe">
+		<os family="windows"/>
+	</condition>
+	<condition property="exe" value="">
+		<os family="unix"/>
+	</condition>
+	<property file="${user.home}/ant/build.properties"/>
+	<property file="common.properties"/>
+	
+	<property name="game.name" value="Reversi"/>
+	
+	<target name="clean">
+		<delete failonerror="false" includeemptydirs="true">
+			<fileset dir="${dir.bin}" includes="**/*" />
+		</delete>
+	</target>
+	
+	<target name="prapare" depends="clean">
+		<mkdir dir="${dir.bin}" />
+		<mkdir dir="${dir.bin}/source" />
+		<copy todir="${dir.bin}/source">
+			<fileset dir="${dir.base}/assets"/>
+		</copy>
+	</target>
+	
+	<target name="build" depends="prapare">
+		<antcall target="compile"/>
+		<antcall target="run"/>
+	</target>	
+	
+	<target name="compile">
+		<sequential>
+			<exec executable="${flex.mxmlc}" failonerror="true">
+				<arg line="-debug=true"/>
+				<arg line="-sp '${dir.src}'"/>
+				<arg line="-static-link-runtime-shared-libraries"/>
+				<arg line="-library-path+='${dir.lib}\MonsterDebugger.swc'"/>
+				<arg line="-library-path+='${dir.lib}\feathers.swc'"/>
+				<arg line="-library-path+='${dir.lib}\PureMVC.swc'"/>
+				<arg line="-library-path+='${dir.lib}\starling.swc'"/>
+				<arg line="-o '${dir.bin}/${game.name}.swf'"/>
+				<arg line="-default-size '${player.width}' '${player.height}'"/>
+				<arg line="-default-background-color='#C0C0C0'"/>
+				<arg line="-default-frame-rate='${player.fps}'"/>
+				<arg line="-swf-version='32'"/>
+				<arg line="-- '${dir.src}\com\renatus\reversi\Main.as'"/>
+			</exec>
+		</sequential>
+	</target>
+	
+	<target name="run">
+		<exec executable="${flash.player.path}" >
+    		<arg line="${dir.bin}/${game.name}.swf" />
+    	</exec>
+	</target>
+
+</project>

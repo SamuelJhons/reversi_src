@@ -1,0 +1,34 @@
+<data>
+	<item id="title_start_menu">
+		<ru><![CDATA[Реверси]]></ru>
+	</item>
+	<item id="title_start_pvp">
+		<ru><![CDATA[Игрок vs AI]]></ru>
+	</item>
+	<item id="title_game_over">
+		<ru><![CDATA[Игра окончена]]></ru>
+	</item>
+	<item id="title_pause">
+		<ru><![CDATA[Пауза]]></ru>
+	</item>
+	
+	
+	<item id="txt_select_color">
+		<ru><![CDATA[Выберите цвет :]]></ru>
+	</item>
+	<item id="txt_select_diff">
+		<ru><![CDATA[Выберите сложность :]]></ru>
+	</item>
+	<item id="txt_warning">
+		<ru><![CDATA[Вы уверены, что хотите выйти ?]]></ru>
+	</item>
+	<item id="txt_win_first">
+		<ru><![CDATA[Победили ЖЕЛТЫЕ !!!]]></ru>
+	</item>
+	<item id="txt_win_second">
+		<ru><![CDATA[Победили ЗЕЛЕНЫЕ !!!]]></ru>
+	</item>
+	<item id="txt_draw">
+		<ru><![CDATA[Победила ЖРУЖБА !!!]]></ru>
+	</item>
+</data>
