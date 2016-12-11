@@ -15,18 +15,15 @@ package com.renatus.reversi.command.level.utils.ai {
 		}
 		
 		public function calc(grid:Vector.<int>, id1:int, id2:int):int {
-			var index:int, eval:int = 0;
-			for (var i:int = 0, l:int = _height; i < l; i++) {
-				for (var j:int = 0, l2:int = _width; j < l2; j++) {
-					index = i + j * _width;
-					switch(grid[index]) {
-						case id1:
-							eval += _cost[index];
-							break;
-						case id2:
-							eval -= _cost[index];
-							break;
-					}
+			var eval:int = 0;
+			for (var i:int = 0, l:int = grid.length; i < l; i++) {		
+				switch(grid[i]) {
+					case id1:
+						eval += _cost[i];
+						break;
+					case id2:
+						eval -= _cost[i];
+						break;
 				}
 			}
 			return eval;

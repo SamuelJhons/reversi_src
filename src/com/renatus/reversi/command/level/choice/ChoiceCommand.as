@@ -28,7 +28,7 @@ package com.renatus.reversi.command.level.choice
 			sendNotification(LevelEvent.DISABLE_LEVEL);
 			data.switchCount = 0;
 			var pos:Object = notification.getBody();
-			data.grid[int(pos.i) + pos.j * Config.WIDTH] = data.curID;
+			data.grid[int(pos.i)* Config.WIDTH + int(pos.j)] = data.curID;
 			sendNotification(LevelEvent.ADD_ITEM, new ItemData(pos.i, pos.j, data.curID));
 			sendNotification(SoundCommand.MOVE);
 			data.count[data.curID]++;
@@ -41,15 +41,17 @@ package com.renatus.reversi.command.level.choice
 		}	
 		
 		private function onAddItem(pos:Object):void {
-			var list:Array = new GetCapturedItems().getList(pos.i, pos.j, data.grid, data.curID, data.secID, LevelData.ITEM_CLEAR);
+			var list:Array = new GetCapturedItems().getList(int(pos.i) * Config.WIDTH + int(pos.j), data.grid, data.curID, data.secID, LevelData.ITEM_CLEAR);
 			_interval = setInterval(anim, 100, list);
 		}
 		
 		private function anim(list:Array):void {
 			if (list.length != 0) {
-				var itemPos:Point = list.shift();
-				data.grid[itemPos.y + itemPos.x * Config.WIDTH] = data.curID;
-				sendNotification(LevelEvent.SWITCH_ITEM, new ItemData(itemPos.y, itemPos.x, data.curID));
+				var itemPos:int = list.shift();
+				data.grid[itemPos] = data.curID;
+				var jPos:int = itemPos % Config.WIDTH;
+				var iPos:int = (itemPos - jPos) / Config.WIDTH;
+				sendNotification(LevelEvent.SWITCH_ITEM, new ItemData(iPos, jPos, data.curID));
 				sendNotification(SoundCommand.MOVE);
 				data.count[data.curID]++;
 				data.count[data.secID]--;
@@ -62,6 +64,11 @@ package com.renatus.reversi.command.level.choice
 		}
 		
 		private function checkConditions():void {
+			var str:String = "";
+			for (var i:int = 0; i < 64; i++) {
+				str += data.grid[i];
+			}
+			MonsterDebugger.trace(this, str);
 			sendNotification(LevelList.CONDITION);
 		}
 	}

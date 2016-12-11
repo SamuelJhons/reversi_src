@@ -57,7 +57,9 @@ package com.renatus.reversi.view.utils
 		}
 		
 		public function getImage(textureID:String):Image {
-			return new Image(_assets.getTexture(textureID));
+			var img:Image = new Image(_assets.getTexture(textureID));
+			img.touchable = false;
+			return img;
 		}
 	}
 }

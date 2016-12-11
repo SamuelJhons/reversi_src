@@ -1,1 +1,2 @@
 D:\temp\game1\build.xml
+D:\temp\Новая папка\reversi_src\build.xml

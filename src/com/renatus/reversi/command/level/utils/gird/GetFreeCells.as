@@ -8,11 +8,9 @@ package com.renatus.reversi.command.level.utils.gird {
 		
 		public function getFreeCells(grid:Vector.<int>, id1:int, id2:int, clear:int) : Boolean {
 			init(id1, id2, clear);
-			for (var i:int = 0; i < _height; i++) {
-				for (var j:int = 0; j < _width; j++) {
-					if (grid[i + j * _width] == clear) {
-						return true;
-					}
+			for (var i:int = 0, l:int = grid.length; i < l; i++) {
+				if (grid[i] == clear) {
+					return true;
 				}
 			}
 			return false;
