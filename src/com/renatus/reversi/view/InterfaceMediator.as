@@ -12,8 +12,8 @@ package com.renatus.reversi.view
 	 */
 	public class InterfaceMediator extends AMediator {
 		
-		public function InterfaceMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.INTERFACE, new InterfaceView(), cont, assets);
+		public function InterfaceMediator(cont:Sprite) {
+			super(ContList.INTERFACE, new InterfaceView(), cont);
 			(_view as InterfaceView).addEventListener(InterfaceView.PAUSE_CLICK, onPauseEventListener);
 		}
 		

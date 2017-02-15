@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="reversi" default="build" basedir="">
+	<!-- 							-->
+	<!-- ОБЩЕПРОЕКТНЫЕ НАСТРОЙКИ	-->
+	<!--  							-->
 	<condition property="exe" value=".exe">
 		<os family="windows"/>
 	</condition>
@@ -19,9 +22,16 @@
 	
 	<target name="prapare" depends="clean">
 		<mkdir dir="${dir.bin}" />
-		<mkdir dir="${dir.bin}/source" />
-		<copy todir="${dir.bin}/source">
-			<fileset dir="${dir.base}/assets"/>
+		<mkdir dir="${dir.bin}/web" />
+		<mkdir dir="${dir.bin}/android" />
+		<copy todir="${dir.bin}/web/assets">
+			<fileset dir="${dir.base}/assets/web"/>
+		</copy>
+		<copy todir="${dir.bin}/android/assets">
+			<fileset dir="${dir.base}/assets/android"/>
+		</copy>
+		<copy todir="${dir.bin}/android">
+			<fileset dir="${dir.base}/android"/>
 		</copy>
 	</target>
 	
@@ -35,12 +45,14 @@
 			<exec executable="${flex.mxmlc}" failonerror="true">
 				<arg line="-debug=true"/>
 				<arg line="-sp '${dir.src}'"/>
+				<arg line="-define+=CONFIG::WEB,true"/>
+				<arg line="-define+=CONFIG::ANDROID,false"/>
 				<arg line="-static-link-runtime-shared-libraries"/>
 				<arg line="-library-path+='${dir.lib}\MonsterDebugger.swc'"/>
 				<arg line="-library-path+='${dir.lib}\feathers.swc'"/>
 				<arg line="-library-path+='${dir.lib}\PureMVC.swc'"/>
 				<arg line="-library-path+='${dir.lib}\starling.swc'"/>
-				<arg line="-o '${dir.bin}/${game.name}.swf'"/>
+				<arg line="-o '${dir.bin}/web/${game.name}.swf'"/>
 				<arg line="-default-size '${player.width}' '${player.height}'"/>
 				<arg line="-default-background-color='#C0C0C0'"/>
 				<arg line="-default-frame-rate='${player.fps}'"/>
@@ -52,8 +64,200 @@
 	
 	<target name="run">
 		<exec executable="${flash.player.path}" >
-    		<arg line="${dir.bin}/${game.name}.swf" />
+    		<arg line="${dir.bin}/web/${game.name}.swf" />
     	</exec>
+	</target>
+	
+	
+	<target name="test">
+		<sequential>
+			<exec executable="${flex.mxmlc}" failonerror="true">
+				<arg line="-debug=false"/>
+				<arg line="-sp '${dir.src}'"/>
+				<arg line="-static-link-runtime-shared-libraries"/>
+				<arg line="-library-path+='${dir.lib}\MonsterDebugger.swc'"/>
+				<arg line="-o '${dir.bin}/test.swf'"/>
+				<arg line="-default-size '${player.width}' '${player.height}'"/>
+				<arg line="-default-background-color='#C0C0C0'"/>
+				<arg line="-default-frame-rate='${player.fps}'"/>
+				<arg line="-swf-version='32'"/>
+				<arg line="-- '${dir.src}\com\renatus\test\TestReversi.as'"/>
+			</exec>
+		</sequential>
+	</target>
+	
+	<target name="run_test" depends="test">
+		<exec executable="${flash.player.path}" >
+    		<arg line="${dir.bin}/test.swf" />
+    	</exec>
+	</target>
+
+	<property name="deploy.dir" value="${dir.bin}/android"/>
+	<property name="assets.dir" value="${deploy.dir}/assets"/>
+	<property name="src.dir" value="src"/>
+	<property name="src.dir.slot" value="${src.dir}/mobile/slots"/>
+	<property name="assets.dir" value="sources/atf"/>
+	<property name="flex.mxmlc" value="${FLEX_HOME}/bin/mxmlc"/>
+	<property name="flex.compc" value="${FLEX_HOME}/bin/compc"/>
+	<property name="air.amxmlc" value="${FLEX_HOME}/bin/amxmlc.bat"/>
+	<property name="air.adl" value="${FLEX_HOME}/bin/adl.exe"/>
+	<property name="air.adt" value="${FLEX_HOME}/bin/adt.bat"/>
+	<property name="app.descriptor" value="${game.name}.xml"/>
+	<property name="app.descriptor-debug" value="${game.name}-debug.xml"/>
+	<property name="app.id" value="com.renatus.reversi"/>
+	<property name="app.version" value="1.0.0"/>
+	<property name="project.root" value="."/>
+	<property name="air.name" value="${game.name}.apk"/>
+	<property name="air.assets" value="assets"/>
+	<property name="vk.id" value="5874377"/>
+
+	<property name="air.storetype" value="pkcs12"/>
+	<property name="air.keystore" value="test.p12"/>
+	
+	<property name="air.storepass" value="123"/>
+	<property name="air.platform" value="android"/>
+	<property name="android.adb" value="${ANDROID_SDK}/platform-tools/adb.exe"/>
+	<property name="tools.png2atf" value="tools/png2atf/png2atf.exe"/>
+	<property name="tools.ant.libdir" value="tools/ant/lib"/>
+	
+	<target name="___ANDROID____">
+	</target>
+	
+	<target name="android_build" description="Launches app in ADL" depends="prapare">
+		<antcall target="android_compile"></antcall>
+		<antcall target="run_1280x720"></antcall>
+	</target>
+	
+	<!-- Compile -->
+	<target name="android_compile" description="Compiles the project SWF">
+		<exec executable="${air.amxmlc}" failonerror="true">
+			<arg line="-sp '${dir.src}'"/>
+			<arg line="-debug=true"/>
+			<arg line="-define+=CONFIG::WEB,false"/>
+			<arg line="-define+=CONFIG::ANDROID,true"/>
+			<arg line="-define+=CONFIG::VK_ID,${vk.id}"/>
+			<arg line="-library-path+='${dir.lib}\MonsterDebugger.swc'"/>
+			<arg line="-library-path+='${dir.lib}\feathers.swc'"/>
+			<arg line="-library-path+='${dir.lib}\PureMVC.swc'"/>
+			<arg line="-library-path+='${dir.lib}\starling.swc'"/>
+			<arg line="-library-path+='${dir.lib}\com.nikaent.ane.vk.ane'"/>
+			<arg line="-o '${deploy.dir}/${game.name}.swf'"/>
+			<arg line="-default-size '1024' '768'"/>
+			<arg line="-default-frame-rate='30'"/>
+			<arg line="-default-background-color='#000000'"/>
+			<arg line="-swf-version='34'"/>
+			<arg line="-- '${dir.src}\com\renatus\reversi\Main.as'"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 320x240 -->
+	<target name="run_320x240" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 320x240:320x240"/>
+			<arg line="${deploy.dir}/${game.name}-debug320x240.xml"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 640x480 -->
+	<target name="run_640_480" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 640x480:640x480"/>
+			<arg line="${deploy.dir}/${game.name}-debug640x480.xml"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 960x720 -->
+	<target name="run_960x720" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 960x720:960x720"/>
+			<arg line="${deploy.dir}/${game.name}-debug960x720.xml"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 1280x720 -->
+	<target name="run_1280x720" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 1280x720:1280x720"/>
+			<arg line="${deploy.dir}/${game.name}-debug1280x720.xml"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 1024x768 -->
+	<target name="run_1024x768" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 1024x768:1024x768"/>
+			<arg line="${deploy.dir}/${game.name}-debug1024x768.xml"/>
+		</exec>
+	</target>
+	<!-- Launch ADL 1136x600 -->
+	<target name="run_1136x600" description="Launches app in ADL">
+		<exec executable="${air.adl}" failonerror="true">
+			<arg line="-profile mobileDevice"/>
+			<arg line="-screensize 1136x600:1136x600"/>
+			<arg line="${deploy.dir}/${game.name}-debug1136x600.xml"/>
+		</exec>
+	</target>
+	
+	<!-- Package -->
+	<target name="package_release" description="Packages up you Air application for release as an apk">
+		<exec executable="${air.adt}" failonerror="true">
+			<!-- -package -target apk -storetype pkcs12 -keystore sampleCert.p12 HelloWorld.apk HelloWorld-app.xml HelloWorld.swf  -->
+			<arg line="-package"/>
+			<arg line="-target apk-captive-runtime"/>
+			<arg line="-storetype ${air.storetype}"/>
+			<arg line="-keystore ${deploy.dir}/${air.keystore}"/>
+			<arg line="-storepass ${air.storepass}"/>
+			<arg line="${deploy.dir}/${air.name}"/>
+			<arg line="${deploy.dir}/${app.descriptor}"/>
+			<arg line="-C ${deploy.dir} ${game.name}.swf" />
+			<arg line="-C ${deploy.dir} assets" />
+			<arg line="-extdir ${dir.ane}/" />
+		</exec>
+	</target>
+	<!-- Package -->
+	<target name="package_debug" description="Packages up you Air application for release as an apk">
+		<exec executable="${air.adt}" failonerror="true">
+			<!-- -package -target apk -storetype pkcs12 -keystore sampleCert.p12 HelloWorld.apk HelloWorld-app.xml HelloWorld.swf  -->
+			<arg line="-package"/>
+			<arg line="-target apk-debug"/>
+			<arg line="-connect '192.168.1.3'"/>
+			<arg line="-storetype ${air.storetype}"/>
+			<arg line="-keystore ${deploy.dir}/${air.keystore}"/>
+			<arg line="-storepass ${air.storepass}"/>
+			<arg line="${deploy.dir}/debug_${air.name}"/>
+			<arg line="${deploy.dir}/${app.descriptor}"/>
+			<arg line="-C ${deploy.dir} ${game.name}.swf" />
+			<arg line="-C ${deploy.dir} assets" />
+			<arg line="-extdir ${dir.ane}/" />
+		</exec>
+	</target>
+	
+	<!-- Phone Launcher -->
+	<target name="phone" description="Launches the current apk on a usb connected phone" depends="uninstall,install,launch"/>
+	<!-- Install on device -->
+	<target name="install" description="Installs the last created .apk file on your attached device">
+		<exec executable="${android.adb}">
+			<arg line="-d install"/>
+			<arg line="-r ${deploy.dir}/${air.name}"/>
+		</exec>
+	</target>
+	<!-- Uninstall from device -->
+	<target name="uninstall" description="Uninstalls the application from the device">
+		<exec executable="${air.adt}">
+			<arg line="-uninstallApp"/>
+			<arg line="-platform ${air.platform}"/>
+			<arg line="-platformsdk ${ANDROID_SDK}"/>
+			<arg line="-appid ${app.id}"/>
+		</exec>
+	</target>
+	<!-- Launch on device -->
+	<target name="launch" description="Launches the app on your device">
+		<exec executable="${air.adt}">
+			<arg line="-launchApp"/>
+			<arg line="-platform ${air.platform}"/>
+			<arg line="-platformsdk ${ANDROID_SDK}"/>
+			<arg line="-appid ${app.id}"/>
+		</exec>
 	</target>
 
 </project>

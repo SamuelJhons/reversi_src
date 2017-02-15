@@ -11,8 +11,8 @@ package com.renatus.reversi.view {
 	 */
 	public class PauseMediator extends AMediator {
 		
-		public function PauseMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.PAUSE, new PauseView(), cont , assets);
+		public function PauseMediator(cont:Sprite) {
+			super(ContList.PAUSE, new PauseView(), cont);
 			(_view as PauseView).addEventListener(PauseView.MENU_CLICK, onMenuEventListener);
 			(_view as PauseView).addEventListener(PauseView.PLAY_CLICK, onPlayEventListener);
 			(_view as PauseView).addEventListener(PauseView.REPLAY_CLICK, onReplayEventListener);

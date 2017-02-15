@@ -10,8 +10,8 @@ package com.renatus.reversi.view {
 	 */
 	public class ProgressMediator extends AMediator {
 		
-		public function ProgressMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.PROGRESS, new ProgressView(), cont, assets);
+		public function ProgressMediator(cont:Sprite) {
+			super(ContList.PROGRESS, new ProgressView(), cont);
 		}
 		
 		override public function listNotificationInterests () : Array {

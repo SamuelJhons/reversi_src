@@ -15,9 +15,9 @@ package com.renatus.reversi.command.init {
 	internal class InitStartScreenCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new BackgroundMediator(uiCfg.root, uiCfg.assets));
-			facade.registerMediator(new ProgressMediator(uiCfg.root, uiCfg.assets));
-			facade.registerMediator(new TintMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new BackgroundMediator(uiCfg.root));
+			facade.registerMediator(new ProgressMediator(uiCfg.root));
+			facade.registerMediator(new TintMediator(uiCfg.root));
 			sendNotification(ProgressEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			
 			sendNotification(InitCommand.NEXT);

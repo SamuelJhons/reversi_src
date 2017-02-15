@@ -15,7 +15,7 @@ package com.renatus.reversi.command.init {
 	internal class InitStartMenuCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new StartMenuMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new StartMenuMediator(uiCfg.root));
 			sendNotification(StartMenuEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			
 			facade.registerCommand(StartMenuEvent.UI_PVE_CLICK, PveClickCommand);

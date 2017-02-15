@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:ba342390c53a7b4b7051eca5e68d6b11$ -->
+<TextureAtlas imagePath="atlas3.png">
+    <SubTexture name="arrow_down" x="1198" y="1709" width="68" height="82"/>
+    <SubTexture name="arrow_left" x="1852" y="386" width="84" height="70"/>
+    <SubTexture name="arrow_right" x="1852" y="314" width="84" height="70"/>
+    <SubTexture name="back_pause" x="1729" y="2" width="684" height="310"/>
+    <SubTexture name="back_start" x="2" y="1054" width="1111" height="749"/>
+    <SubTexture name="back_warning" x="1404" y="722" width="628" height="313"/>
+    <SubTexture name="background" x="2" y="2" width="1400" height="1050"/>
+    <SubTexture name="btn_accept_disable" x="1729" y="314" width="121" height="124"/>
+    <SubTexture name="btn_accept_down" x="2338" y="1879" width="121" height="124"/>
+    <SubTexture name="btn_accept_normal" x="2216" y="1753" width="121" height="124"/>
+    <SubTexture name="btn_accept_over" x="2215" y="1879" width="121" height="124"/>
+    <SubTexture name="btn_back_disable" x="2093" y="1753" width="121" height="124"/>
+    <SubTexture name="btn_back_down" x="2092" y="1879" width="121" height="124"/>
+    <SubTexture name="btn_back_normal" x="1970" y="1753" width="121" height="124"/>
+    <SubTexture name="btn_back_over" x="1969" y="1883" width="121" height="124"/>
+    <SubTexture name="btn_cancel_disable" x="1847" y="1757" width="121" height="124"/>
+    <SubTexture name="btn_cancel_down" x="1846" y="1883" width="121" height="124"/>
+    <SubTexture name="btn_cancel_normal" x="1724" y="1757" width="121" height="124"/>
+    <SubTexture name="btn_cancel_over" x="1723" y="1883" width="121" height="124"/>
+    <SubTexture name="btn_menu_disable" x="1601" y="1757" width="121" height="124"/>
+    <SubTexture name="btn_menu_down" x="1600" y="1904" width="121" height="124"/>
+    <SubTexture name="btn_menu_normal" x="1478" y="1778" width="121" height="124"/>
+    <SubTexture name="btn_menu_over" x="1477" y="1904" width="121" height="124"/>
+    <SubTexture name="btn_pause_disable" x="1355" y="1778" width="121" height="124"/>
+    <SubTexture name="btn_pause_down" x="1354" y="1919" width="121" height="124"/>
+    <SubTexture name="btn_pause_normal" x="1232" y="1793" width="121" height="124"/>
+    <SubTexture name="btn_pause_over" x="1109" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_play_disable" x="986" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_play_down" x="863" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_play_normal" x="740" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_play_over" x="617" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_pve_disable" x="1595" y="1397" width="323" height="358" frameX="-6" frameY="-8" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pve_down" x="1920" y="1395" width="321" height="356" frameX="-8" frameY="-10" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pve_normal" x="1585" y="1037" width="323" height="358" frameX="-6" frameY="-8" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pve_over" x="1268" y="1416" width="325" height="360" frameX="-4" frameY="-6" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pvp_disable" x="1404" y="362" width="323" height="358" frameX="-6" frameY="-8" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pvp_down" x="1910" y="1037" width="321" height="356" frameX="-8" frameY="-10" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pvp_normal" x="1404" y="2" width="323" height="358" frameX="-6" frameY="-8" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_pvp_over" x="1258" y="1054" width="325" height="360" frameX="-4" frameY="-6" frameWidth="329" frameHeight="366"/>
+    <SubTexture name="btn_replay_disable" x="494" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_replay_down" x="371" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_replay_normal" x="248" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_replay_over" x="125" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_share_disable" x="2" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_share_down" x="2" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_share_normal" x="2" y="1805" width="121" height="124"/>
+    <SubTexture name="btn_share_over" x="2" y="1805" width="121" height="124"/>
+    <SubTexture name="game_progress_back" x="1115" y="1054" width="81" height="700"/>
+    <SubTexture name="game_progress_bar" x="1198" y="1054" width="58" height="653"/>
+    <SubTexture name="item1" x="350" y="1931" width="114" height="114"/>
+    <SubTexture name="item1_selected" x="234" y="1931" width="114" height="114"/>
+    <SubTexture name="item2" x="118" y="1931" width="114" height="114"/>
+    <SubTexture name="item2_selected" x="2" y="1931" width="114" height="114"/>
+    <SubTexture name="item_back_disable" x="1729" y="563" width="121" height="121"/>
+    <SubTexture name="item_back_normal" x="1729" y="440" width="121" height="121"/>
+    <SubTexture name="progress_back" x="498" y="1931" width="854" height="82"/>
+    <SubTexture name="progress_bar" x="1852" y="458" width="824" height="58"/>
+    <SubTexture name="progress_particle" x="1938" y="314" width="52" height="52" frameX="-1" frameY="-1" frameWidth="56" frameHeight="56"/>
+    <SubTexture name="slider_back" x="498" y="2015" width="756" height="21"/>
+    <SubTexture name="slider_bar" x="466" y="1931" width="30" height="102"/>
+    <SubTexture name="tint" x="1256" y="2015" width="18" height="18"/>
+</TextureAtlas>

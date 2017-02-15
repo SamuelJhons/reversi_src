@@ -14,7 +14,7 @@ package com.renatus.reversi.command.init {
 	internal class InitWarningCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new WarningMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new WarningMediator(uiCfg.root));
 			sendNotification(WarningEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			facade.registerCommand(WarningEvent.UI_WARNING_ACCEPT, WarningAcceptCommand);
 			facade.registerCommand(WarningEvent.UI_WARNING_CANCEL, WarningCancelCommand);

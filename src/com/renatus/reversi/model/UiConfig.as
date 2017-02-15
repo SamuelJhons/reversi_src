@@ -9,8 +9,8 @@ package com.renatus.reversi.model {
 		
 		public var cfg:XML; 
 		public var locale:XML;
-		public var assets:AssetManager;
 		public var root:Sprite;
+    public var assets:AssetManager;
 		
 	}
 }

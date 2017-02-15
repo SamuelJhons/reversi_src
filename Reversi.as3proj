@@ -10,9 +10,9 @@
     <movie height="600" />
     <movie version="21" />
     <movie minorVersion="0" />
-    <movie platform="Flash Player" />
+    <movie platform="AIR Mobile" />
     <movie background="#FFFFFF" />
-    <movie preferredSDK="Flex 4.6.0, AIR 21.0;4.6.0, 21.0;" />
+    <movie preferredSDK="Feathers SDK 3.1.0 FP23.0 AIR23.0 en_US;4.14.0;" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -57,6 +57,15 @@
     <element path="lib\PureMVC.swc" />
     <element path="lib\starling.swc" />
     <element path="lib\MonsterDebugger.swc" />
+    <element path="lib\flexunit-uilistener-4.2.0-20140410-4.12.0.swc" />
+    <element path="lib\flexunit-cilistener-4.2.0-20140410-4.12.0.swc" />
+    <element path="lib\flexunit-4.2.0-20140410-flex_4.12.0.swc" />
+    <element path="lib\MetalWorksMobileTheme.swc" />
+    <element path="lib\com.marpies.ane.vk.ane" />
+    <element path="lib\com.marpies.ane.vk.swc" />
+    <element path="lib\com.marpies.ane.androidsupport.ane" />
+    <element path="lib\com.nikaent.ane.vk.swc" />
+    <element path="lib\com.nikaent.ane.vk.ane" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
@@ -76,7 +85,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\com\renatus\reversi\Main.as" />
+    <!-- example: <compile path="..." /> -->
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

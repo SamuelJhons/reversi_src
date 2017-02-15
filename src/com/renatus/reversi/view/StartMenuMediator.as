@@ -12,8 +12,8 @@ package com.renatus.reversi.view
 	 */
 	public class StartMenuMediator extends AMediator {
 		
-		public function StartMenuMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.START_MENU, new StartMenuView(), cont, assets);
+		public function StartMenuMediator(cont:Sprite) {
+			super(ContList.START_MENU, new StartMenuView(), cont);
 			(_view as StartMenuView).addEventListener(StartMenuView.PVE_CLICK, onPVEEventListener);
 			(_view as StartMenuView).addEventListener(StartMenuView.PVP_CLICK, onPVPEventListener);
 		}

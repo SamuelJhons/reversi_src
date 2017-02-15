@@ -9,7 +9,7 @@ package com.renatus.reversi.view {
 	 */
 	internal interface IGameView {
 		
-		function init(cont:Sprite, assets:AssetManager):void
+		function init(cont:Sprite):void
 		function prepare():void;
 	}
 	

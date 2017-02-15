@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'30.11.2016'</value>
+      <value>'09.02.2017'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -40,10 +40,11 @@
       <path-element>D:\temp\reversi\lib\PureMVC.swc</path-element>
       <path-element>D:\temp\reversi\lib\starling.swc</path-element>
       <path-element>D:\temp\reversi\lib\MonsterDebugger.swc</path-element>
+      <path-element>D:\temp\reversi\lib\MetalWorksMobileTheme.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\temp\reversi\src\com\renatus\reversi\Main.as</path-element>
+    <path-element>D:\temp\reversi\src\com\renatus\reversi\Main.mxml</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

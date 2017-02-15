@@ -17,7 +17,7 @@ package com.renatus.reversi.command.init {
 	public class InitStartPVPCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new StartPVPMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new StartPVPMediator(uiCfg.root));
 			sendNotification(StartPVPEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			
 			facade.registerCommand(StartPVPEvent.UI_BACK, StartPVPBackcommand);

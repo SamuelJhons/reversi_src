@@ -12,8 +12,8 @@ package com.renatus.reversi.view {
 	 */
 	public class WarningMediator extends AMediator {
 		
-		public function WarningMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.WARNING, new WarningView(), cont, assets);
+		public function WarningMediator(cont:Sprite) {
+			super(ContList.WARNING, new WarningView(), cont);
 			(_view as WarningView).addEventListener(WarningView.ACCEPT_CLICK, onAcceptEventListener);
 			(_view as WarningView).addEventListener(WarningView.CANCEL_CLICK, onCancelEventListener);
 		}

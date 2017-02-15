@@ -15,7 +15,7 @@ package com.renatus.reversi.command.init {
 	internal class InitGameOverCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new GameOverMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new GameOverMediator(uiCfg.root));
 			sendNotification(GameOverEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			facade.registerCommand(GameOverEvent.UI_MENU_CLICK, GameOverMenuCommand);
 			facade.registerCommand(GameOverEvent.UI_REPLAY_CLICK, GameOverReplayCommand);

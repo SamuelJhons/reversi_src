@@ -26,6 +26,9 @@ package com.renatus.reversi.command.init {
 			addCommand(InitCommand.WARNING, InitWarningCommand, data);
 			addCommand(InitCommand.LOGIC, InitLogicCommand, data);
 			addCommand(InitCommand.SOUND, InitSoundCommadn, data);
+			CONFIG::ANDROID {
+				addCommand(InitCommand.VK, InitVKCommand, data);
+			}
 			addCommand(InitCommand.COMPLETED, InitCompletedCommand, data);
 			
 			data.total = data.queue.length - 1;

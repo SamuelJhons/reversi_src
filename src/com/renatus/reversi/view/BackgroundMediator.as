@@ -9,8 +9,8 @@ package com.renatus.reversi.view
 	 */
 	public class BackgroundMediator extends AMediator {
 		
-		public function BackgroundMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.BACK, new BackgroundView(), cont, assets);
+		public function BackgroundMediator(cont:Sprite ) {
+			super(ContList.BACK, new BackgroundView(), cont);
 		}
 	}
 }

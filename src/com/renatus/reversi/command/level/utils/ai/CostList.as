@@ -1,6 +1,6 @@
 package com.renatus.reversi.command.level.utils.ai {
 	/**
-	 *
+	 * Описывает вес ячеек
 	 */
 	public class CostList {
 		

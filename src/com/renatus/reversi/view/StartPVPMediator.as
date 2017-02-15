@@ -12,8 +12,8 @@ package com.renatus.reversi.view {
 	 */
 	public class StartPVPMediator extends AMediator {
 		
-		public function StartPVPMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.START_PVP, new StartPVPView(), cont, assets);
+		public function StartPVPMediator(cont:Sprite) {
+			super(ContList.START_PVP, new StartPVPView(), cont);
 			(_view as StartPVPView).addEventListener(StartPVPView.ON_BACK, onBackEventListener);
 			(_view as StartPVPView).addEventListener(StartPVPView.ON_PLAY, onPlayEventListener);
 			(_view as StartPVPView).addEventListener(StartPVPView.ON_SLIDER_CHANGE, onSliderChangeEventListener);

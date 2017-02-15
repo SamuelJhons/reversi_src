@@ -10,8 +10,8 @@ package com.renatus.reversi.view {
 	 */
 	public class TintMediator extends AMediator {
 		
-		public function TintMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.TINT, new TintView(), cont , assets);
+		public function TintMediator(cont:Sprite) {
+			super(ContList.TINT, new TintView(), cont);
 		}
 		
 		override public function listNotificationInterests () : Array {

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<application xmlns="http://ns.adobe.com/air/application/23.0">
+  <id>com.renatus.reversi</id>
+  <versionNumber>1.0.0</versionNumber>
+  <versionLabel/>
+  <filename>Reversi</filename>
+  <description/>
+<!-- To localize the description, use the following format for the description element.<description><text xml:lang="en">English App description goes here</text><text xml:lang="fr">French App description goes here</text><text xml:lang="ja">Japanese App description goes here</text></description>-->
+  <name>Reversi</name>
+<!-- To localize the name, use the following format for the name element.<name><text xml:lang="en">English App name goes here</text><text xml:lang="fr">French App name goes here</text><text xml:lang="ja">Japanese App name goes here</text></name>-->
+  <copyright/>
+	 <icon> 
+		<image16x16>assets/icons/icon16.png</image16x16> 
+		<image32x32>assets/icons/icon32.png</image32x32> 
+		<image48x48>assets/icons/icon48.png</image48x48> 
+		<image128x128>assets/icons/icon128.png</image128x128>  
+	</icon>
+	<extensions>
+		<extensionID>com.nikaent.ane.vk</extensionID>
+	</extensions>
+  <initialWindow>
+    <content>Reversi.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <fullScreen>true</fullScreen>
+	<aspectRatio>landscape</aspectRatio> 
+    <autoOrients>false</autoOrients> 
+    <renderMode>direct</renderMode>
+  </initialWindow>
+  <customUpdateUI>false</customUpdateUI>
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+  <android>
+           <manifestAdditions><![CDATA[
+			<manifest android:installLocation="auto"> 
+                <uses-permission android:name="android.permission.INTERNET"/> 
+                <application android:enabled="true"> 
+                    <activity android:name="com.vk.sdk.VKServiceActivity" android:label="ServiceActivity"/> 
+                    <activity android:name="com.nikaent.ane.vk.activity.AuthActivity" android:label="AuthActivity"/> 
+                    <activity android:name="com.nikaent.ane.vk.activity.ApiCallActivity" android:label="ApiCallActivity"/> 
+                    <activity android:excludeFromRecents="false"> 
+                        <intent-filter> 
+                            <action android:name="android.intent.action.MAIN"/> 
+                            <category android:name="android.intent.category.LAUNCHER"/> 
+                        </intent-filter> 
+                    </activity> 
+                </application> 
+            </manifest> 
+        ]]></manifestAdditions>
+    </android>
+</application>

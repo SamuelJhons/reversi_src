@@ -1,7 +1,8 @@
 package com.renatus.reversi.command.level.utils {
+	
 	import flash.geom.Point;
 	/**
-	 *  
+	 * Список направлений  
 	 */
 	public class Direction {
 		
@@ -14,10 +15,6 @@ package com.renatus.reversi.command.level.utils {
 		public static const DOWN:Point			= new Point( 0,  1);
 		public static const LEFT_DOWN:Point		= new Point(-1,  1);
 		
-		public static const ALL:Array			=	[LEFT, LEFT_UP, UP, RIGHT_UP, RIGHT, RIGHT_DOWN, DOWN, LEFT_DOWN];
-		public static const HORIZONTAL:Array	=	[LEFT, UP, RIGHT, DOWN];
-		public static const DIAGONAL:Array		=	[LEFT_UP, RIGHT_UP, RIGHT_DOWN, LEFT_DOWN];
-		
+		public static const ALL:Array			=	[LEFT, LEFT_UP, UP, RIGHT_UP, RIGHT, RIGHT_DOWN, DOWN, LEFT_DOWN];		
 	}
-
 }

@@ -24,7 +24,8 @@ package com.renatus.reversi.command.init {
 		
 		private function send():void {
 			sendNotification(ProgressEvent.UPDATE_PROGRESS, (data.total - data.queue.length + 1) / data.total);
-			sendNotification(data.queue.shift());
+			var event:String = data.queue.shift() as String;
+			sendNotification(event);
 		}
 		
 		private function get data():QueueData {

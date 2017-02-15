@@ -16,7 +16,7 @@ package com.renatus.reversi.command.init {
 	internal class InitPauseCommand extends SimpleCommand {
 		
 		override public function execute(notification:INotification):void {
-			facade.registerMediator(new PauseMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new PauseMediator(uiCfg.root));
 			sendNotification(PauseEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			facade.registerCommand(PauseEvent.UI_MENU, PauseMenuCommand);
 			facade.registerCommand(PauseEvent.UI_PLAY, PausePlayCommand);

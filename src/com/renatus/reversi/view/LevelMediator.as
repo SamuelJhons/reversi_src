@@ -13,8 +13,8 @@ package com.renatus.reversi.view
 	 */
 	public class LevelMediator extends AMediator {
 		
-		public function LevelMediator(cont:Sprite, assets:AssetManager ) {
-			super(ContList.LEVEL, new LevelView(), cont, assets);
+		public function LevelMediator(cont:Sprite) {
+			super(ContList.LEVEL, new LevelView(), cont);
 			(_view as LevelView).addEventListener(LevelView.ITEM_SELECT, onItemSelectEventListener);
 		}
 		

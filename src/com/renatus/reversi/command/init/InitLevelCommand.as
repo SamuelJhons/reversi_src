@@ -21,11 +21,11 @@ package com.renatus.reversi.command.init
 		override public function execute(notification:INotification):void {
 			facade.registerProxy(new GameProxy(ProxyName.LEVEL, new LevelData()));
 			
-			facade.registerMediator(new LevelMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new LevelMediator(uiCfg.root));
 			sendNotification(LevelEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			facade.registerCommand(LevelEvent.UI_ITEM_SELECT, LevelItemSelectCommand);
 			
-			facade.registerMediator(new InterfaceMediator(uiCfg.root, uiCfg.assets));
+			facade.registerMediator(new InterfaceMediator(uiCfg.root));
 			sendNotification(InterfaceEvent.UPDATE_CFG, {cfg: uiCfg.cfg, locale:uiCfg.locale});
 			sendNotification(InterfaceEvent.INIT_PARTICLES, uiCfg.assets.getXml("particle"));
 			facade.registerCommand(InterfaceEvent.UI_LEVEL_PAUSE, LevelPauseCommand);

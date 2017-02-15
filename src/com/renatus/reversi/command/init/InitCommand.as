@@ -22,16 +22,18 @@ package com.renatus.reversi.command.init {
 		
 		public static const PAUSE:String			=	NAME + "Pause";
 		
-		public static const WARNING:String			=	NAME + "Warning";
+		public static const WARNING:String		=	NAME + "Warning";
 		
 		public static const CLEAR:String			=	NAME + "Clear";
 		
 		public static const NEXT:String				=	NAME + "Next";
 		
-		public static const COMPLETED:String		=	NAME  + "Completed";
+		public static const COMPLETED:String	=	NAME  + "Completed";
 		
 		public static const LOGIC:String			=	NAME  + "Logic";
 		
 		public static const SOUND:String			=	NAME + "Sound";
+		
+		public static const VK:String					=	NAME + "VK";
 	}
 }

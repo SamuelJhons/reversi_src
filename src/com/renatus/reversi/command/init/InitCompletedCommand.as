@@ -1,13 +1,13 @@
 package com.renatus.reversi.command.init 
 {
-	import com.renatus.reversi.command.sound.SoundCommand;
-	import com.renatus.reversi.event.ProgressEvent;
-	import com.renatus.reversi.event.StartMenuEvent;
-	import com.renatus.reversi.model.ProxyName;
-	import com.renatus.reversi.model.UiConfig;
-	import flash.utils.setTimeout;
-	import org.puremvc.as3.interfaces.INotification;
-	import org.puremvc.as3.patterns.command.SimpleCommand;
+  import com.renatus.reversi.command.sound.SoundCommand;
+  import com.renatus.reversi.event.ProgressEvent;
+  import com.renatus.reversi.event.StartMenuEvent;
+  import com.renatus.reversi.model.ProxyName;
+  import com.renatus.reversi.model.UiConfig;
+  import flash.utils.setTimeout;
+  import org.puremvc.as3.interfaces.INotification;
+  import org.puremvc.as3.patterns.command.SimpleCommand;
 	
 	/**
 	 * 

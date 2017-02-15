@@ -6,13 +6,9 @@ package com.renatus.reversi.view.utils {
 	 */
 	public class Localization {
 		
-		private var _lang:String	=	"ru";
+		private static var _lang:String	=	"ru";
 		
-		public function Localization() {
-			
-		}
-		
-		public function parse(cfg:XML, locale:XML, cont:Sprite):void {
+		public static function parse(cfg:XML, locale:XML, cont:Sprite):void {
 			for each(var list:XML in cfg[cont.name].*) {
 				if (list.@text_id.length() != 0) {
 					TextField(cont.getChildByName(list.localName())).text = locale.item.(@id == list.@text_id)[_lang];
@@ -20,7 +16,7 @@ package com.renatus.reversi.view.utils {
 			}
 		}
 		
-		public function getText(locae:XML, id:String):String {
+		public static function getText(locae:XML, id:String):String {
 			return locae.item.(@id == id)[_lang];
 		}
 	}
